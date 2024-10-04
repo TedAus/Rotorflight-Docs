@@ -9,7 +9,7 @@ import styles   from './styles.module.css';
 import EdgeTX   from './img/edgetx-logo.png';
 import ETHOS    from './img/ethos-logo.png';
 
-Forward programming enables the connected ESC to be programmed via your transmitter rather than requiring a vendor programming box.  
+Forward programming enables the connected ESC to be programmed via your transmitter rather than requiring a vendor programming box or connection to a computer.  
 
 A number of ESC vendor/models have forward programming support from the transmitter via Rotorflight’s Lua script. The ESCs currently supported are:  
 * Hobbywing Platinum V5  
@@ -20,7 +20,7 @@ A number of ESC vendor/models have forward programming support from the transmit
 
 ## Configure the Flight controller  
 ### Set the UART 
-Enable the UART port for ESC telemetry on the Configuration Tab.
+Enable the UART port for ESC telemetry on the Configuration Tab. Ensure this is configured on the correct UART port that the ESC is connected to.
 
 ![Forward Programming](./img/forward-uart.png)  
 
@@ -28,12 +28,12 @@ Enable the UART port for ESC telemetry on the Configuration Tab.
 Select one of the ESCs above that support Forward Programming. Enter this in the ESC telemetry protocol
 
 ### One Wire Communication (half-duplex)
-Most ESCs have a single telemetry wire. This is used to transmit telemtry information from the ESC to the flight controller. For forward programming functionality, this wire also need's to transmit information from the Flight controller to the ESC. By enabling the half-duplex bi-irectional communictions are enabled. 
+Most ESCs have a single telemetry wire. This is used to transmit telemetry information from the ESC to the flight controller. For forward programming functionality, this wire also needs to transmit information from the Flight controller to the ESC. By enabling the half-duplex, bi-directional communication is enabled. 
 
 ![Forward Programming](./img/forward-duplex.png)
 
 ### Pin Swap
-For standard ESC telemetry we need to connect to a UART RX (receive) pin; however, as we are using bi-directional communication this will require the telemetry wire being connected to the UART TX (transmit) pin. 
+For standard ESC telemetry we need to connect to a UART RX (receive) pin; however, if using bi-directional communication this will require the telemetry wire to be connected to the UART TX (transmit) pin. 
 
 #### Option 1
 Wire the ESC telemetry to any spare ***UART TX*** pin on the flight controller. If we are using a TX pin then Pin-swap remains off.
